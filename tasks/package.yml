@@ -2,12 +2,8 @@
 # Debian-like systems
 #
 
-- name: Place the GPG key (Debian-like)
-  copy: src=APT-GPG-KEY-DUO dest=/tmp/APT-GPG-KEY-DUO owner=root group=root mode=0644
-  when: ansible_os_family == 'Debian'
-
 - name: Install the GPG key (Debian-like)
-  apt_key: file=/tmp/APT-GPG-KEY-DUO id=15D32EFC state=present
+  apt_key: url=https://duo.com/APT-GPG-KEY-DUO id=30BFE0242B19592EB122211D1CC91FC615D32EFC state=present
   become_user: root
   when: ansible_os_family == 'Debian'
 
