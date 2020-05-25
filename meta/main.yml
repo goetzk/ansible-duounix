@@ -12,9 +12,9 @@ galaxy_info:
         - 7
     - name: Ubuntu
       versions:
-        - precise
         - trusty
         - xenial
+        - bionic
   galaxy_tags:
     - system
 dependencies: []

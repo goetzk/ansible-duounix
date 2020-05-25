@@ -3,7 +3,9 @@
 #
 
 - name: Install the GPG key (Debian-like)
-  apt_key: url=https://duo.com/APT-GPG-KEY-DUO id=30BFE0242B19592EB122211D1CC91FC615D32EFC state=present
+  apt_key:
+    url: https://duo.com/DUO-GPG-PUBLIC-KEY.asc
+    id: 08C2A645DDF240B85844068D7A450864C1A07A85
   become_user: root
   when: ansible_os_family == 'Debian'
 
