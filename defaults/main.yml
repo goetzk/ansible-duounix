@@ -1,7 +1,7 @@
 ---
 duounix_checksum: 2eb11dff0a173c62e318587c50faec717e8889fbb6bb2d076e4f31999f9107ae
 duounix_path: https://dl.duosecurity.com/
-duounix_version: '1.9.18'
+duounix_version: 'latest'
 duounix_conf_dir: /etc/duo
 duounix_prefix_dir: /usr
 duounix_build_pam: yes
