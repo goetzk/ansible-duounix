@@ -28,3 +28,21 @@ If building from source, the following variables take effect:
 | duounix_path                  | https://dl.duosecurity.com/                                   |                                           |
 | duounix_version               | latest                                                        |                                           |
 | duounix_prefix_dir            | /usr                                                          |                                           |
+
+Pam configuration using Ansible templates via two variables (with their
+defaults below):
+
+duounix_pam_root_dir: /etc/pam.d/
+duounix_pam_config_files: []
+
+Example of duounix_pam_config_files populated.
+
+duounix_pam_config_files:
+  - name: sshd
+    source: pam_ssh_config.template
+  - name: example
+    source: sub_dir/path/some_file.templ
+
+Services are NOT restarted following pam configuration; consider using a
+post_tasks entry in your playbook if you'd like it automated.
+

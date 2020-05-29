@@ -19,3 +19,14 @@
   template: >
     src=login_duo.conf.j2
     dest={{ duounix_conf_dir }}/login_duo.conf
+
+- name: Place pam configuration files
+  template:
+    src: "{{ item.source }}"
+    dest: "{{ duounix_pam_root_dir }}/{{ item.name }}"
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+  loop: "{{ duounix_pam_config_files }}"
+  become: true
+ 

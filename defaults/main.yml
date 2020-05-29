@@ -17,3 +17,6 @@ duounix_login_config:
   prompts: 3
 duounix_pam_config: "{{ duounix_login_config }}"
 
+duounix_pam_root_dir: /etc/pam.d/
+duounix_pam_config_files: []
+
